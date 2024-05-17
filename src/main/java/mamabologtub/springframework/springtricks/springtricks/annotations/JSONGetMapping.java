@@ -17,8 +17,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Retention(RetentionPolicy.RUNTIME)
 @RequestMapping(method = RequestMethod.GET, produces = "application/json")
 public @interface JSONGetMapping {
-    @AliasFor(annotation = RequestMapping.class, attribute = "produces")
-    String[] produces() default {};
     @AliasFor(annotation = RequestMapping.class, attribute = "value")
     String[] value() default {};
 

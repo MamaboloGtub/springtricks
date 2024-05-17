@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
 public @interface JSONPostMapping {
     @AliasFor(annotation = RequestMapping.class, attribute = "produces")
-    String[] produces() default {};
+    String[] produces() default { "application/json" };
     @AliasFor(annotation = RequestMapping.class, attribute = "consumes")
-    String[] consumes() default {};
+    String[] consumes() default { "application/json" };
     @AliasFor(annotation = RequestMapping.class, attribute = "value")
     String[] value() default {};
 

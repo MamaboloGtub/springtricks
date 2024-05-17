@@ -26,5 +26,19 @@ public class PersonService {
         return returnObj.toString();
 
     }
+    public String createPerson(String payload) throws Exception {
+        JSONObject payloadObject = new JSONObject(payload);
+        JSONObject returnObject = new JSONObject();
+
+        if (!payloadObject.has("name") || !payloadObject.has("age") || !payloadObject.has("city")) {
+            throw new Exception("All three variables must be present");
+        }
+        returnObject.put("name", payloadObject.getString("name"));
+        returnObject.put("age", payloadObject.getString("age"));
+        returnObject.put("city", payloadObject.getString("city"));
+
+        return returnObject.toString();
+
+    }
 
 }
